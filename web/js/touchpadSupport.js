@@ -5,7 +5,6 @@ const { LGraphCanvas } = window
 const isTouchpad = e => e.wheelDelta ? !!(e.wheelDelta % 120) : e.deltaMode === 0
 const isTouchpadZooming = e => e.ctrlKey && !!(e.deltaY % 100)
 const canTargetScroll = e => e.target.clientHeight < e.target.scrollHeight
-// const isTouchpad = e => e.wheelDeltaX || e.wheelDeltaY ? Math.abs(e.wheelDeltaX) !== 120 && Math.abs(e.wheelDeltaY) !== 120 : e.deltaMode === 0
 
 const oldProcessMouseWheel = LGraphCanvas.prototype.processMouseWheel;
 
@@ -23,20 +22,13 @@ const enablePanning = () => isPanning = true
 const disablePanning = () => (isPanning = false, document.removeEventListener("pointermove", disablePanning))
 
 const processMouseWheel = e => {
-  // console.log("target", e.target)
-  // console.log("panning", isPanning)
   const scale = app.canvas.ds.scale
   const touchpad = isTouchpad(e)
   const touchpadZooming = isTouchpadZooming(e)
   const deltaZoom =  100 / (touchpadZooming ? touchpadZoomSpeed : zoomSpeed) / scale
 
-  if (e.target.tagName === "TEXTAREA") {
-    const targetCanScroll = canTargetScroll(e)
-    if (allowPanningOverNonScrollableTextareas && !targetCanScroll) enablePanning()
-    // if (!touchpad && !e.ctrlKey && !allowZoomingOverTextareas) return e.preventDefault(), false
-  }
+  if (e.target.tagName === "TEXTAREA" && allowPanningOverNonScrollableTextareas && !canTargetScroll(e)) enablePanning()
 
-  // console.log("zoom",touchpadZooming, deltaZoom, touchpad, touchpad ? touchpadZoomSpeed : zoomSpeed, e)
   if (app.canvas.graph && app.canvas.allow_dragcanvas && isPanning) {
     document.addEventListener("pointermove", disablePanning);
 

@@ -1,3 +1,3 @@
 html, body {
-    overscroll-behavior-x: none;
+    overscroll-behavior-x: none; /* I want to stop the browser from navigating to the previous page with touchpad gesture, super annoying on MacOS. This doesn't work yet. */
 }

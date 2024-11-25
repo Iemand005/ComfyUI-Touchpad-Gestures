@@ -37,3 +37,5 @@ Fixes the annoying trackpad zooming in ComfyUI
 2. Restart ComfyUI
 3. Reload the UI
 4. Enjoy!
+
+Partially inspired by: https://github.com/subtleGradient/TinkerBot-tech-for-ComfyUI-Touchpad
