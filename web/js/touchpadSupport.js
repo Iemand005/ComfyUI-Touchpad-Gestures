@@ -39,7 +39,6 @@ const processMouseWheel = e => {
       deltaY = e.deltaX;
     }
 
-    console.log(isFirefox);
     if ((!isFirefox && (e.metaKey || e.ctrlKey || (scrollZooming && !touchpad))) || (touchpadZooming && touchpad)) {
       if (e.metaKey) deltaZoom *= -1 / 0.5;
       app.canvas.ds.changeScale(scale - e.deltaY / deltaZoom, [e.clientX, e.clientY]);
@@ -56,8 +55,6 @@ const processMouseWheel = e => {
   }
 };
 
-console.log(isFirefox);
-
 app.canvasEl.parentElement.addEventListener(isFirefox ? "wheel" : "mousewheel", processMouseWheel);
 
-LGraphCanvas.prototype.processMouseWheel = e => enablePanning();
+LGraphCanvas.prototype.processMouseWheel = () => enablePanning();
