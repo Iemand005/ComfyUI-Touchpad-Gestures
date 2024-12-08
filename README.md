@@ -19,6 +19,13 @@ Fixes the annoying trackpad zooming in ComfyUI
 
 ### Tested with
 
+#### Browsers
+
+- Chrome (133)
+- Firefox (133) (not yet fully tested in combination with mice)
+
+#### Hardware
+
 - Windows laptop touchpad
 - MacBook touchpad
 - Generic Logitech mouse
