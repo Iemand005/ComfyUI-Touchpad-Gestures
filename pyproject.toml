@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-touchpad-gestures"
+description = "Implements proper touchpad zooming and panning into ComfyUI to make it more usable on laptops."
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/Iemand005/ComfyUI-Touchpad-Gestures"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-Touchpad-Gestures"
+Icon = ""
