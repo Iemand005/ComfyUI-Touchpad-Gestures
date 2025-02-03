@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-touchpad-gestures"
-description = "Implements proper touchpad zooming and panning into ComfyUI to make it more usable on laptops."
+description = "Implements proper touchpad/trackpad zooming and panning into ComfyUI to make it more usable on laptops."
 version = "1.0.0"
 license = {file = "LICENSE"}
 
